@@ -1,0 +1,44 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Член семьи</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>№</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Имя</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>Статус</th>
+                <td>{{ entity.status }}</td>
+            </tr>
+            <tr>
+                <th>E-mail</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+            <tr>
+                <th>День рождения</th>
+                <td>{{ entity.birthday|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+	<ul class="record_actions btn-group nav-pills">
+		<li>
+			<a class = "btn btn-inverse" href="{{ path('user') }}">
+				Перейти к списку
+			</a>
+		</li>
+		<li>
+			<a class = "btn btn-primary" href="{{ path('user_edit', { 'id': entity.id }) }}">
+				Изменить
+			</a>
+		</li>
+		<li>{{ form(delete_form) }}</li>
+	</ul>
+{% endblock %}

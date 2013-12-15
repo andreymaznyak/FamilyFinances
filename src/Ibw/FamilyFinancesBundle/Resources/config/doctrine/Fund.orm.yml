@@ -1,0 +1,38 @@
+Ibw\FamilyFinancesBundle\Entity\Fund:
+  type: entity
+  table: fund
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      type: string
+      length: 255
+      unique: true
+    is_periodic:
+      type: boolean
+    period:
+      type: integer
+    created_at:
+      type: datetime
+    period_limit:
+      type: integer
+  oneToMany:
+    userIncomes:
+      targetEntity: UserIncome
+      mappedBy: fund
+    userExpenses:
+      targetEntity: UserExpense
+      mappedBy: fund
+  manyToMany:
+    users:
+      targetEntity: User
+      joinTable:
+        name: user_fund
+        joinColumns:
+          fund_id:
+            referencedColumnName: id
+        inverseJoinColumns:
+          user_id:
+            referencedColumnName: id

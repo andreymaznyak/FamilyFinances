@@ -1,0 +1,30 @@
+ibw_userincome:
+    pattern:  /
+    defaults: { _controller: "IbwFamilyFinancesBundle:UserIncome:index" }
+
+ibw_userincome_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IbwFamilyFinancesBundle:UserIncome:show" }
+
+ibw_userincome_new:
+    pattern:  /new
+    defaults: { _controller: "IbwFamilyFinancesBundle:UserIncome:new" }
+
+ibw_userincome_create:
+    pattern:  /create
+    defaults: { _controller: "IbwFamilyFinancesBundle:UserIncome:create" }
+    requirements: { _method: post }
+
+ibw_userincome_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IbwFamilyFinancesBundle:UserIncome:edit" }
+
+ibw_userincome_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IbwFamilyFinancesBundle:UserIncome:update" }
+    requirements: { _method: post|put }
+
+ibw_userincome_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IbwFamilyFinancesBundle:UserIncome:delete" }
+    requirements: { _method: post|delete }

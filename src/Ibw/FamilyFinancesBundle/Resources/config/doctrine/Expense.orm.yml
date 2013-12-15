@@ -1,0 +1,17 @@
+Ibw\FamilyFinancesBundle\Entity\Expense:
+  type: entity
+  table: expense
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      type: string
+      length: 255
+      unique: true
+  oneToMany:
+    userExpense:
+      targetEntity: UserExpense
+      mappedBy: expense
+    

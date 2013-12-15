@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Доход</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>№</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Сумма</th>
+                <td>{{ entity.cost }}</td>
+            </tr>
+            <tr>
+                <th>Описание</th>
+                <td>{{ entity.description }}</td>
+            </tr>
+            <tr>
+                <th>Активность</th>
+                <td>{{ entity.isactive }}</td>
+            </tr>
+            <tr>
+                <th>Дата создания</th>
+                <td>{{ entity.createdat|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Дата изменения</th>
+                <td>{{ entity.updatedat|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+	<ul class="record_actions btn-group nav-pills">
+		<li>
+			<a class = "btn btn-inverse" href="{{ path('ibw_userincome') }}">
+				Перейти к списку
+			</a>
+		</li>
+		<li>
+			<a class = "btn btn-primary" href="{{ path('ibw_userincome_edit', { 'id': entity.id }) }}">
+				Изменить
+			</a>
+		</li>
+		<li>{{ form(delete_form) }}</li>
+	</ul>
+{% endblock %}

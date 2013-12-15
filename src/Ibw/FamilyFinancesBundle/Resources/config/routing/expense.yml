@@ -1,0 +1,30 @@
+expense:
+    pattern:  /
+    defaults: { _controller: "IbwFamilyFinancesBundle:Expense:index" }
+
+expense_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IbwFamilyFinancesBundle:Expense:show" }
+
+expense_new:
+    pattern:  /new
+    defaults: { _controller: "IbwFamilyFinancesBundle:Expense:new" }
+
+expense_create:
+    pattern:  /create
+    defaults: { _controller: "IbwFamilyFinancesBundle:Expense:create" }
+    requirements: { _method: post }
+
+expense_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IbwFamilyFinancesBundle:Expense:edit" }
+
+expense_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IbwFamilyFinancesBundle:Expense:update" }
+    requirements: { _method: post|put }
+
+expense_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IbwFamilyFinancesBundle:Expense:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,29 @@
+login:
+    pattern:   /login
+    defaults:  { _controller: IbwFamilyFinancesBundle:Default:login }
+pai_diagram:
+    pattern:   /234
+    defaults:  { _controller: IbwFamilyFinancesBundle:PieDiagram:getPieInfo }
+login_check:
+    pattern:   /login_check
+ibw_family_finances_homepage:
+  pattern:  /hello/{name}
+  defaults: { _controller: IbwFamilyFinancesBundle:Default:index }
+IbwFamilyFinancesBundle_ibw_userincome:
+  resource: "@IbwFamilyFinancesBundle/Resources/config/routing/userincome.yml"
+  prefix:   /
+IbwFamilyFinancesBundle_expenses:
+  resource: "@IbwFamilyFinancesBundle/Resources/config/routing/userexpense.yml"
+  prefix:   /userexpense
+IbwFamilyFinancesBundle_user:
+  resource: "@IbwFamilyFinancesBundle/Resources/config/routing/user.yml"
+  prefix:   /user
+IbwFamilyFinancesBundle_funds:
+  resource: "@IbwFamilyFinancesBundle/Resources/config/routing/fund.yml"
+  prefix:   /fund
+IbwFamilyFinancesBundle_income:
+  resource: "@IbwFamilyFinancesBundle/Resources/config/routing/income.yml"
+  prefix:   /income
+IbwFamilyFinancesBundle_expense:
+  resource: "@IbwFamilyFinancesBundle/Resources/config/routing/expense.yml"
+  prefix:   /expense

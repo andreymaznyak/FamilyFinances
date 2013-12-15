@@ -1,0 +1,30 @@
+funds:
+    pattern:  /
+    defaults: { _controller: "IbwFamilyFinancesBundle:Fund:index" }
+
+funds_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "IbwFamilyFinancesBundle:Fund:show" }
+
+funds_new:
+    pattern:  /new
+    defaults: { _controller: "IbwFamilyFinancesBundle:Fund:new" }
+
+funds_create:
+    pattern:  /create
+    defaults: { _controller: "IbwFamilyFinancesBundle:Fund:create" }
+    requirements: { _method: post }
+
+funds_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "IbwFamilyFinancesBundle:Fund:edit" }
+
+funds_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "IbwFamilyFinancesBundle:Fund:update" }
+    requirements: { _method: post|put }
+
+funds_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "IbwFamilyFinancesBundle:Fund:delete" }
+    requirements: { _method: post|delete }

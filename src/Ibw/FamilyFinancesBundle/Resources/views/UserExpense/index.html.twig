@@ -1,0 +1,55 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Список расходов</h1>
+
+    <table class="records_list table table-striped">
+        <thead>
+            <tr>
+                <th>№</th>
+				<th>Член семьи</th>
+                <th>Фонд</th>
+                <th>Тип расхода</th>
+                <th>Сумма</th>
+                <th>Количество</th>
+                <th>Описание</th>
+                <th>Дата создания</th>
+                <th>Дата изменения</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('expenses_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.user }}</td>
+                <td>{{ entity.fund }}</td>
+                <td>{{ entity.expense }}</td>
+				<td>{{ entity.cost }}</td>
+                <td>{{ entity.amount }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{% if entity.createdat %}{{ entity.createdat|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.updatedat %}{{ entity.updatedat|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul class="record_actions btn-group nav-pills">
+                    <li>
+                        <a class = "btn btn-info" href="{{ path('expenses_show', { 'id': entity.id }) }}">Показать</a>
+                    </li>
+                    <li>
+                        <a class = "btn btn-primary" href="{{ path('expenses_edit', { 'id': entity.id }) }}">Изменить</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul class="record_actions btn-group nav-pills">
+        <li>
+            <a class = "btn btn-success" href="{{ path('expenses_new') }}">
+                Добавить
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

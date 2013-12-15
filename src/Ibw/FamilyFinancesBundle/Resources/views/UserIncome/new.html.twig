@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Создание дохода</h1>
+    {{ form(form) }}
+
+	<ul class="record_actions btn-group nav-pills">
+		<li>
+			<a class = "btn btn-inverse" href="{{ path('ibw_userincome') }}">
+				Перейти к списку
+			</a>
+		</li>
+	</ul>
+{% endblock %}

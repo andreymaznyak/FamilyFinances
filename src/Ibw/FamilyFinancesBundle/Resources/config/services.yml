@@ -1,0 +1,7 @@
+parameters:
+#    ibw_family_finances.example.class: Ibw\FamilyFinancesBundle\Example
+
+services:
+#    ibw_family_finances.example:
+#        class: %ibw_family_finances.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

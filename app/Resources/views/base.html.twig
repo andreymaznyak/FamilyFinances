@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+			
+			<link href="{{ asset('bundles/ibwfamilyfinances/css/bootstrap.css') }}" type="text/css" rel="stylesheet">  
+			<link href="{{ asset('bundles/ibwfamilyfinances/css/bootstrap-responsive.css') }}" type="text/css" rel="stylesheet">  
+			<link href="{{ asset('bundles/ibwfamilyfinances/css/mystyle.css') }}" type="text/css" rel="stylesheet">
+			
+			<link href="http://cdn.wijmo.com/themes/aristo/jquery-wijmo.css" rel="stylesheet" type="text/css" />
+			<link href="http://cdn.wijmo.com/jquery.wijmo-pro.all.3.20133.20.min.css" rel="stylesheet" type="text/css" />
+		
+		{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+		{% include '::baselayout.html.twig' %}
+		<div class = "MainBlock">
+        {% block body %}{% endblock %}
+		</div>
+        {% block javascripts %}
+			<script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+			<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js" type="text/javascript"></script>
+			<script src="http://cdn.wijmo.com/jquery.wijmo-open.all.3.20133.20.min.js" type="text/javascript"></script>
+			<script src="http://cdn.wijmo.com/jquery.wijmo-pro.all.3.20133.20.min.js" type="text/javascript"></script>
+			<script src="http://cdn.wijmo.com/interop/wijmo.data.ajax.3.20133.20.js" type="text/javascript"></script>
+			<script src="http://cdn.wijmo.com/wijmo/external/knockout-2.2.0.js" type="text/javascript"></script>
+			<script src="{{ asset('bundles/ibwfamilyfinances/js/mypiechart.js') }}"></script> 
+			<script src="{{ asset('bundles/ibwfamilyfinances/js/bootstrap.js') }}"></script>  
+			<script src="{{ asset('bundles/ibwfamilyfinances/js/jquery.js') }}"></script>  
+			<script src="{{ asset('bundles/ibwfamilyfinances/js/bootstrap-dropdown.js') }}"></script> 
+		{% endblock %}
+    </body>
+</html>

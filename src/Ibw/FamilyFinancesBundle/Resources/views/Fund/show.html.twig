@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Фонд</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>№</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Название</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>Периодичный</th>
+                <td>{{ entity.isperiodic }}</td>
+            </tr>
+            <tr>
+                <th>Период</th>
+                <td>{{ entity.period }}</td>
+            </tr>
+            <tr>
+                <th>Дата создания</th>
+                <td>{{ entity.createdat|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Лимит</th>
+                <td>{{ entity.periodlimit }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+	<ul class="record_actions btn-group nav-pills">
+		<li>
+			<a class = "btn btn-inverse" href="{{ path('funds') }}">
+				Перейти к списку
+			</a>
+		</li>
+		<li>
+			<a class = "btn btn-primary" href="{{ path('funds_edit', { 'id': entity.id }) }}">
+				Изменить
+			</a>
+		</li>
+		<li>{{ form(delete_form) }}</li>
+	</ul>
+{% endblock %}

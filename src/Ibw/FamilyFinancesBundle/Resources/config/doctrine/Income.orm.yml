@@ -1,0 +1,17 @@
+Ibw\FamilyFinancesBundle\Entity\Income:
+  type: entity
+  table: income
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      type: string
+      length: 255
+      unique: true
+  oneToMany:
+    userIncomes:
+      targetEntity: UserIncome
+      mappedBy: income
+    

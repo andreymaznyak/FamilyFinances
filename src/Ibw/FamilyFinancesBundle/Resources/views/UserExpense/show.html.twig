@@ -1,0 +1,53 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Расход</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Cost</th>
+                <td>{{ entity.cost }}</td>
+            </tr>
+            <tr>
+                <th>Amount</th>
+                <td>{{ entity.amount }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ entity.description }}</td>
+            </tr>
+            <tr>
+                <th>Is_active</th>
+                <td>{{ entity.isactive }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ entity.createdat|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Updated_at</th>
+                <td>{{ entity.updatedat|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+	<ul class="record_actions btn-group nav-pills">
+		<li>
+			<a class = "btn btn-inverse" href="{{ path('expenses') }}">
+				Перейти к списку
+			</a>
+		</li>
+		<li>
+			<a class = "btn btn-primary" href="{{ path('expenses_edit', { 'id': entity.id }) }}">
+				Изменить
+			</a>
+		</li>
+		<li>{{ form(delete_form) }}</li>
+	</ul>
+
+{% endblock %}

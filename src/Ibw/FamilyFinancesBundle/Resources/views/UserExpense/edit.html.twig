@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Изменение расхода</h1>
+
+    {{ form(edit_form) }}
+
+<ul class="record_actions btn-group nav-pills">
+    <li>
+        <a class = "btn btn-inverse" href="{{ path('expenses') }}">
+            Перейти к списку
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

@@ -1,0 +1,4 @@
+ibw_family_finances:
+    resource: "@IbwFamilyFinancesBundle/Resources/config/routing.yml"
+    prefix:   /
+

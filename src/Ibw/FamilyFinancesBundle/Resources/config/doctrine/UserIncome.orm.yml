@@ -1,0 +1,43 @@
+Ibw\FamilyFinancesBundle\Entity\UserIncome:
+  type: entity
+  table: userincome
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    cost:
+      type: integer
+    description:
+      type: text
+      nullable: true
+    is_active:
+      type: boolean
+      nullable: true
+    created_at:
+      type: datetime
+    updated_at:
+      type: datetime
+      nullable: true
+  manyToOne:
+    user:
+      targetEntity: User
+      inversedBy: userIncomes
+      joinColumn:
+        name: user_id
+        referencedColumnName: id
+    fund:
+      targetEntity: Fund
+      inversedBy: userIncomes
+      joinColumn:
+        name: fund_id
+        referencedColumnName: id
+    income:
+      targetEntity: Income
+      inversedBy: userIncomes
+      joinColumn:
+        name: income_id
+        referencedColumnName: id
+  lifecycleCallbacks:
+    prePersist: [ setCreatedAtValue ]
+    preUpdate: [ setUpdatedAtValue ]

@@ -1,0 +1,56 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Список доходов</h1>
+
+    <table class="records_list table table-striped" >
+        <thead>
+            <tr>
+                <th>№</th>
+				<th>Тип дохода</th>
+				<th>Член семьи</th>
+				<th>Фонд</th>
+				<th>Сумма</th>
+                <th>Описание</th>
+                <th>Дата создания</th>
+                <th>Дата изменения</th>
+                <th>Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('ibw_userincome_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.income }}</td>
+				<td>{{ entity.user }}</td>
+				<td>{{ entity.fund }}</td>
+				<td>{{ entity.cost }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{% if entity.createdat %}{{ entity.createdat|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.updatedat %}{{ entity.updatedat|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                <ul class ="btn-group nav-pills">
+                    <li>
+                        <a class = "btn btn-info" href="{{ path('ibw_userincome_show', { 'id': entity.id }) }}">Показать</a>
+                    </li>
+                    <li>
+                        <a class = "btn btn-primary" href="{{ path('ibw_userincome_edit', { 'id': entity.id }) }}">Изменить</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul class ="btn-group nav-pills">
+        <li>
+            <a class = "btn btn-success" href="{{ path('ibw_userincome_new') }}">
+                Добавить
+            </a>
+        </li>
+    </ul>
+
+{% include 'IbwFamilyFinancesBundle::UserIncome/piediagram.html.twig' %}
+	
+{% endblock %}

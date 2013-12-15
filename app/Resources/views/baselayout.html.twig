@@ -1,0 +1,89 @@
+<div class = "navbar">
+	<div class = "navbar-inner">
+		<a class = "brand" href = "#">Домашний бюджет</a>
+		<ul class="nav">
+			<li class="dropdown">
+			
+				<a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="<?php echo url_for('userincome/index')?>">Доходы
+					<b class="caret"></b>
+				</a>
+				
+				<ul class="dropdown-menu">
+				
+					<li><a href="/new">Добавить</a></li>
+					<li><a href="/">Список</a></li>
+					
+				</ul>
+			</li>
+		
+			
+			<li class="dropdown">
+			
+				<a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="<?php echo url_for('userexpense/index')?>">Расходы
+					<b class="caret"></b>
+				</a>
+				
+				<ul class="dropdown-menu">
+				
+					<li><a href="/userexpense/new">Добавить</a></li>
+					<li><a href="/userexpense/">Список</a></li>
+					
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+			
+				<a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="<?php echo url_for('user/index')?>">Член семьи
+					<b class="caret"></b>
+				</a>
+				
+				<ul class="dropdown-menu">
+				
+					<li><a href="/user/new">Добавить</a></li>
+					<li><a href="/user/">Список</a></li>
+					
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="<?php echo url_for('fund/index') ?>">Фонд
+					<b class="caret"></b>
+				</a>
+				
+				<ul class="dropdown-menu">
+				
+					<li><a href="/fund/new">Добавить</a></li>
+					<li><a href="/fund/">Список</a></li>
+					
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="<?php echo url_for('income/index') ?>">Тип дохода
+					<b class="caret"></b>
+				</a>
+				
+				<ul class="dropdown-menu">
+				
+					<li><a href="/income/new">Добавить</a></li>
+					<li><a href="/income/">Список</a></li>
+					
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="<?php echo url_for('expense/index') ?>">Тип расхода
+					<b class="caret"></b>
+				</a>
+				
+				<ul class="dropdown-menu">
+				
+					<li><a href="/expense/new">Добавить</a></li>
+					<li><a href="/expense/">Список</a></li>
+					
+				</ul>
+			</li>
+		</ul>
+			
+	</div>
+</div>

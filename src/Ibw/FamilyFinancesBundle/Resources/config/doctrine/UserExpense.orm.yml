@@ -1,0 +1,47 @@
+Ibw\FamilyFinancesBundle\Entity\UserExpense:
+  type: entity
+  table: userexpense
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    cost:
+      type: integer
+    amount:
+      type: integer
+      nullable: true
+    description:
+      type: text
+      nullable: true
+    is_active:
+      type: boolean
+      default: true
+      nullable: true
+    created_at:
+      type: datetime
+    updated_at:
+      type: datetime
+      nullable: true
+  manyToOne:
+    user:
+      targetEntity: User
+      inversedBy: userExpense
+      joinColumn:
+        name: user_id
+        referencedColumnName: id
+    fund:
+      targetEntity: Fund
+      inversedBy: userExpense
+      joinColumn:
+        name: fund_id
+        referencedColumnName: id
+    expense:
+      targetEntity: Expense
+      inversedBy: userExpense
+      joinColumn:
+        name: expense_id
+        referencedColumnName: id
+  lifecycleCallbacks:
+    prePersist: [ setCreatedAtValue ]
+    preUpdate: [ setUpdatedAtValue ]
