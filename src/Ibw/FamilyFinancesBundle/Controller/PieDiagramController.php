@@ -1,7 +1,5 @@
 <?php
 
-// src/Acme/HelloBundle/Controller/HelloController.php
-
 namespace Ibw\FamilyFinancesBundle\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -29,7 +27,7 @@ class HelloController
 	}
 	mysql_close($sql_connect);
 	
-	return new Response($pieinfo);
+	return json_encode($pieinfo);
 	//$pieinfo;
 	}
 }
