@@ -3,7 +3,7 @@
 namespace Ibw\FamilyFinancesBundle\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class HelloController
+class PieDiagramController
 {
    public function getPieInfoAction()
 	{
@@ -27,7 +27,7 @@ class HelloController
 	}
 	mysql_close($sql_connect);
 	
-	return json_encode($pieinfo);
-	//$pieinfo;
+	return new response(json_encode($pieinfo));
+
 	}
 }

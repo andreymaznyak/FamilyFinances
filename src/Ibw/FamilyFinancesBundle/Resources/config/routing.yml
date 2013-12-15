@@ -2,7 +2,7 @@ login:
     pattern:   /login
     defaults:  { _controller: IbwFamilyFinancesBundle:Default:login }
 pai_diagram:
-    pattern:   /234
+    pattern:   /pieinfouserincome
     defaults:  { _controller: IbwFamilyFinancesBundle:PieDiagram:getPieInfo }
 login_check:
     pattern:   /login_check

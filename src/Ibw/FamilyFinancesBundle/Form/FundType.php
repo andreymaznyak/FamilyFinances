@@ -20,6 +20,9 @@ class FundType extends AbstractType
             ->add('period',null,array('label' => 'Период'))
             ->add('period_limit',null,array('label' => 'Лимит'))
             ->add('users',null,array('label' => 'Пользователи'))
+			->add('created_at','date',array('input'  => 'datetime',
+								'widget' => 'single_text',
+								'label' => 'Дата создания'))
         ;
     }
     

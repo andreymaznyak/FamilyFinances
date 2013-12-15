@@ -1,9 +1,9 @@
 			$.ajax({
 				type:'post',//тип запроса: get,post либо head
-				url:'ajax.php',//url адрес файла обработчика
+				url:'/pieinfouserincome',//url адрес файла обработчика
 				async: false,
 				success:function (json) {//возвращаемый результат от сервера
-					$result = jQuery.parseJSON( json );
+					result = $.parseJSON( json );
 				}
 			});
 
