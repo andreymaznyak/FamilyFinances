@@ -22,7 +22,7 @@ public class DB {
  //													 \\
  
  //----------------------USER---------------------\\  
- //Table name
+ //Table name  t
  private static final String USER_TABLE = "user";
  //Attributes
  public static final String USER_COLUMN_ID 			= "_id";
